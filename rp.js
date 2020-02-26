@@ -21,7 +21,7 @@ async function onFederatedSignin() {
       }
     });
     const response = await request.show();
-    document.getElementById('contents').innerHTML = "You are now logged in as #Username";
+    document.getElementById('contents').innerHTML = 'You are now logged in as #Username';
     await response.complete('success');
   } catch (e) {
     showMessage(e.toString());
@@ -36,14 +36,17 @@ function check() {
 
   navigator.serviceWorker.getRegistration('service_worker.js').then(registration => {
     if (!registration) {
+      showMessage('Not installed');
       return 'not installed';
     }
+    showMessage('installed');
     return 'installed';
   })
   .catch(error => {
     showMessage('check failure: ' + error);
     return 'error';
   });
+  showMessage('NOT_REACHED');
 }
 
 function install() {
