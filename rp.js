@@ -36,17 +36,14 @@ function check() {
 
   navigator.serviceWorker.getRegistration('service_worker.js').then(registration => {
     if (!registration) {
-      showMessage('Not installed');
+      install();
       return 'not installed';
     }
-    showMessage('installed');
     return 'installed';
   })
   .catch(error => {
-    showMessage('check failure: ' + error);
     return 'error';
   });
-  showMessage('NOT_REACHED');
 }
 
 function install() {
@@ -91,7 +88,7 @@ function uninstall() {
 }
 
 function installIfNotPresent() {
-  if (check() === 'not installed') install();
+  check();
 }
 
 if ((window.location.host === 'kenrb.github.io') &&
