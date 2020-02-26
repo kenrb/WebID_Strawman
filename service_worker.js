@@ -12,6 +12,7 @@ self.addEventListener('message', (evt) => {
   }
 });
 
+// Code for handling actual sign-in event aka payment request.
 self.addEventListener('paymentrequest', (evt) => {
   evt.respondWith(new Promise((resolve) => {
     self.resolver = resolve;
