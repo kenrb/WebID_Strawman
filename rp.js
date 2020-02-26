@@ -41,8 +41,8 @@ function check() {
     return 'installed';
   })
   .catch(error => {
-    showMessage(error);
-    return "error";
+    showMessage('check failure: ' + error);
+    return 'error';
   });
 }
 
@@ -60,10 +60,10 @@ function install() {
           name: 'Chrome uses name and icon from the web app manifest',
           method: window.location.href,
       }).catch(error => {
-        showMessage(error);
+        showMessage('install() instrument setting error: ' + error);
       });
     }).catch(error => {
-      showMessage(error);
+      showMessage('install() registration error: ' + error);
     });
 }
 
@@ -91,9 +91,9 @@ function installIfNotPresent() {
   if (check() === 'not installed') install();
 }
 
-/*if ((window.location.host === 'kenrb.github.io') &&
+if ((window.location.host === 'kenrb.github.io') &&
     (window.location.protocol !== 'https:')) {
   window.location.protocol = 'https:';
-}*/
+}
 
 installIfNotPresent();
