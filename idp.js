@@ -1,10 +1,10 @@
 
-let currentUserName = "#Username";
+currentUserName = "#Username";
 
 function onSignIn() {
   let response = {status: 'success'};
   response.username = currentUserName;
-	navigator.serviceWorker.controller.postMessage(response);
+  navigator.serviceWorker.controller.postMessage(response);
 }
 
 function changeUser() {
