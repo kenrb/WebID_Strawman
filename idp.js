@@ -16,6 +16,6 @@ function updateUser() {
   document.getElementById('contents').style.display = 'block';
   document.getElementById('userSelection').style.display = 'none';
   currentUserName = document.getElementById('newuser').value;
-  document.getElementById('username').innerHTML = 'You are currently signed in to FACETWITGRAM as ' + currentUserName + '.';
+  document.getElementById('username').innerHTML = 'You are currently signed in to FaceTwitID as ' + currentUserName + '.';
   document.getElementById('signin-button').innerHTML = 'Continue as ' + currentUserName;
 }
