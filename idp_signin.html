@@ -8,6 +8,17 @@
 </head>
 
 <style>
+.banner {
+  color: #0000FF;
+  background-color: #FFA500;
+  font-size: 30px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle
+  min-height = 32px;
+}
 .button {
   color: #fff;
   background-color: #1a73e8;
@@ -26,16 +37,26 @@
 </style>
 
 <body>
-  <div id="contents">
-    You are currently signed in to FACETWITGRAM as #Username.
-    <p><button class="button" onclick="onSignIn()">CONTINUE WITH FACETWITGRAM</button></p>
-    <i>(content rendered area)</i><br><br>
-    <hr>
-    <div style="background-color:#D3D3D3">
-      <i>(browser chrome area)</i>
-      Sign in to <b>Relying Party</b> with <b>FACETWITGRAM</b>.<br><br>
-      Be aware that continuing will allow Relying Party to access your FACETWITGRAM name, email address, phone number, profile picture, social security number and mother's maiden name. See Relying Party's <a href ='privacy_policy.html' target='_blank'>Privacy Policy</a> for more information. Cancel if you do not consent to all of the above.<br><br>
-    </div>
+  <div class="banner">
+    FACETWITGRAM Login Page
+  </div>
+  <div id="contents" style="text-align: center">
+    <p id="username">You are currently signed in to FACETWITGRAM as #Username.</p>
+    <p><button id="signin-button" class="button" onclick="onSignIn()">Continue as #Username</button></p>
+    <a href="#" onclick="changeUser();return false;">Select a different user account</a>
+  </div>
+  <div id="userSelection" style="text-align: center; display: none">
+    <p>FACETWITGRAM Username: <input id="newuser"></p>
+    <p><button class="button" onclick="updateUser()">Sign in</button></p>
+  </div>
+  <p><i>(this area is content rendered by the IDP)</i></p>
+  <div class="banner">&nbsp;</div>
+  <hr>
+  <div style="background-color:#D3D3D3">
+    <p><i>(this area is defined by browser UI)</i></p>
+    <b>Relying Party</b> is requesting to sign in using <b>FACETWITGRAM</b>.<br><br>
+    Be aware that continuing will allow Relying Party to access your FACETWITGRAM name, email address, phone number, profile picture, social security number and mother's maiden name. See Relying Party's <a href ='privacy_policy.html' target='_blank'>Privacy Policy</a> for more information. Cancel if you do not consent to all of the above.<br><br>
+  </div>
   </div>
   <script src="idp.js"></script>
 </body>
