@@ -91,6 +91,19 @@ function installIfNotPresent() {
   check();
 }
 
+debug_open = false;
+function toggleDebug() {
+  if (debug_open) {
+    document.getElementById('install-button').style.display = 'none';
+    document.getElementById('uninstall-button').style.display = 'none';
+    debug_open = false;
+  } else {
+    document.getElementById('install-button').style.display = 'block';
+    document.getElementById('uninstall-button').style.display = 'block';
+    debug_open = true;
+  }
+}
+
 if ((window.location.host === 'kenrb.github.io') &&
     (window.location.protocol !== 'https:')) {
   window.location.protocol = 'https:';

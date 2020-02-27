@@ -30,9 +30,11 @@
     <p><button onclick="onFederatedSignin()">Sign in using FaceTwitID</button></p>
   </div>
   <hr>
-  <pre id="msg"></pre>
-  <!--<button onclick="uninstall()">Uninstall service worker</button> -->
-  <script src="rp.js"></script>
+  <pre id='msg'></pre>
+  <a href='#' style='font-size:9px; color:#1E90FF' onclick='toggleDebug();return false;'>Toggle debug controls</a>
+  <button id='install_button' style='display:none' onclick='installIfNotPresent()'>Install service worker</button>
+  <button id='uninstall_button' style='display:none' onclick='uninstall()'>Uninstall service worker</button>
+  <script src='rp.js'></script>
 </body>
 
 </html>
