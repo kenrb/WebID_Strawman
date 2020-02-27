@@ -8,15 +8,30 @@
   <link rel="manifest" href="manifest.json">
 </head>
 
+<style>
+.banner {
+  color: #696969;
+  background-color: #98FB98;
+  font-size: 30px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle
+  min-height = 32px;
+}
+</style>
+
 <body>
+  <p class='banner'>Relying Party</p>
+  <p style="text-align: center"><i>For all your reliable party needs</i><p>
   <div id="contents">
-    <h1>Welcome to Relying Party</h1>
     <p>Sign in with your FACETWITGRAM account to see all the ultra-compelling content herein.</p>
     <p><button onclick="onFederatedSignin()">SIGN IN USING FACETWITGRAM</button></p>
   </div>
   <hr>
   <pre id="msg"></pre>
-  <button onclick="uninstall()">Uninstall service worker</button>
+  <!--<button onclick="uninstall()">Uninstall service worker</button> -->
   <script src="rp.js"></script>
 </body>
 
