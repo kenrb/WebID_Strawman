@@ -21,8 +21,8 @@ async function onFederatedSignin() {
       }
     });
     const response = await request.show();
+    document.getElementById('contents').innerHTML = 'You are now logged in as ' + response.details.username;
     await response.complete('success');
-    document.getElementById('contents').innerHTML = 'You are now logged in as ' + response.username;
   } catch (e) {
     showMessage(e.toString());
   }
