@@ -19,6 +19,7 @@ function updateUser() {
 
 function selectUser(name) {
   document.getElementById('contents').style.display = 'block';
+  document.getElementById('signin-button').style.display = 'block';
   document.getElementById('userSelection').style.display = 'none';
   document.getElementById('multiSelect').style.display = 'none';
   currentUserName = name;
