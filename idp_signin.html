@@ -34,15 +34,38 @@
   line-height: 30px;
   vertical-align: middle;
 }
+.accountChoice {
+  border: 1px solid black;
+  border-radius: 4px;
+  position:relative;
+  text-align: left;
+  display: inline-block;
+}
+.accountChoice:hover {
+  background-color:#1a73e8;
+}
 </style>
 
 <body>
   <div class="banner">
     FaceTwitID Login
   </div>
-  <div id="contents" style="text-align: center">
-    <p id="username">You are currently signed in as #Username.</p>
-    <p><button id="signin-button" class="button" onclick="onSignIn()">Continue as #Username</button></p>
+  <div id='multiSelect'  style='text-align: center'>
+    <p>Choose from your logged in FaceTwitID accounts:</p>
+    <div class='accountChoice' onclick='selectUser("John Smith")'>
+      <b>John Smith</b><br>
+      <p style='font-size:9px'>john.smith@facetwitid.com</p>
+    </div>
+    <hr>
+    <div class='accountChoice' onclick='selectUser("Jane Doe")'>
+      <b>Jane Doe</b><br>
+      <p style='font-size:9px'>john.smith@facetwitid.com</p>
+    </div>
+    <hr>
+    <a href="#" onclick="changeUser();return false;">Or select a different user account</a>
+  </div>
+  <div id="contents"  style="text-align: center; display: none">
+    <p id="username">Click sign-in to continue as #Username.</p>
     <a href="#" onclick="changeUser();return false;">Select a different user account</a>
   </div>
   <div id="userSelection" style="text-align: center; display: none">
@@ -55,6 +78,7 @@
   <div style="background-color:#D3D3D3">
     <p"><i>(this area is defined by browser UI)</i></p>
     <b>Relying Party</b> is requesting to sign in using <b>FaceTwitID</b>.<br>
+    <p><button id="signin-button" class="button" onclick="onSignIn()">Sign in as #Username</button></p>
     Be aware that continuing will allow Relying Party to access your FaceTwitID name and email address. See Relying Party's <a href ='privacy_policy.html' target='_blank'>Privacy Policy</a> for more information. Cancel if you do not consent to all of the above.<br><br>
   </div>
   </div>

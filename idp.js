@@ -9,13 +9,19 @@ function onSignIn() {
 
 function changeUser() {
   document.getElementById('contents').style.display = 'none';
+  document.getElementById('multiSelect').style.display = 'none';
   document.getElementById('userSelection').style.display = 'block';
 }
 
 function updateUser() {
+  selectUser(document.getElementById('newuser').value);
+}
+
+function selectUser(name) {
   document.getElementById('contents').style.display = 'block';
   document.getElementById('userSelection').style.display = 'none';
-  currentUserName = document.getElementById('newuser').value;
-  document.getElementById('username').innerHTML = 'You are currently signed in to FaceTwitID as ' + currentUserName + '.';
-  document.getElementById('signin-button').innerHTML = 'Continue as ' + currentUserName;
+  document.getElementById('multiSelect').style.display = 'none';
+  currentUserName = name;
+  document.getElementById('username').innerHTML = 'Click sign-in to continue as ' + currentUserName + '.';
+  document.getElementById('signin-button').innerHTML = 'Sign in as ' + currentUserName;
 }
