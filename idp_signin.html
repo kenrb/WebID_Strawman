@@ -40,6 +40,7 @@
   position:relative;
   text-align: left;
   display: inline-block;
+  min-width:220px;
 }
 .accountChoice:hover {
   background-color:#1a73e8;
@@ -52,16 +53,12 @@
   </div>
   <div id='multiSelect'  style='text-align: center'>
     <p>Choose from your logged in FaceTwitID accounts:</p>
-    <div class='accountChoice' onclick='selectUser("John Smith")'>
-      <b>John Smith</b><br>
-      <p style='font-size:9px'>john.smith@facetwitid.com</p>
-    </div>
-    <hr>
-    <div class='accountChoice' onclick='selectUser("Jane Doe")'>
-      <b>Jane Doe</b><br>
-      <p style='font-size:9px'>john.smith@facetwitid.com</p>
-    </div>
-    <hr>
+    <p><div class='accountChoice' onclick='selectUser("John Smith")'>
+      <b>John Smith </b><text style='font-size:10px'>john.smith@facetwitid.com</text>
+    </div></p>
+    <p><div class='accountChoice' onclick='selectUser("Jane Doe")'>
+      <b>Jane Doe </b><text style='font-size:10px'>john.smith@facetwitid.com</text>
+    </div></p>
     <a href="#" onclick="changeUser();return false;">Or select a different user account</a>
   </div>
   <div id="contents"  style="text-align: center; display: none">
